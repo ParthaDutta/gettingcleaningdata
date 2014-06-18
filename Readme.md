@@ -4,9 +4,9 @@
 
 The data provided for the project is about wearable computing. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
-**Original Data Source** - [http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones] 
+**Original Data Source** - http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-**Data provided for the project** - [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip] 
+**Data provided for the project** - https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ### Methodology for the Data Analysis.
 
@@ -51,12 +51,9 @@ The entire dataset was split into test dataset and training dataset. Hence their
 
 #### Step 1 : Read and merge the test and training datasets.
 
-The structure of the data in training and test datasets is like this :
+The structure of the data in training and test datasets is as described in the image:
 
-
-| subject_train | y_train    | X_train  |
-|:--------------|:-----------|:---------|
-|Subjects       | Activities | Features |
+![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png "Data Structure")
 
 
 The first column is subject, then activity that the subjects performed and then followed by all the measurements for each combination.
@@ -75,7 +72,7 @@ Vectors with GravityMean, tBodyAccMean etc are dropped as these are created by d
 The data in features files has been used to create the columnnames for for the data variables. First column is subject and second is activity_id. grep function has been used to filter all the mean and std columns
 
 
-#### Step 3 - Descriptive labels for activity
+#### Step 3 - Descriptive labels for activities
 Currently the dataset consists only of activity code. In order to clearly descibe the activities, this table was merged with activity table to pull in the activity descriptions.
 
 activity_id column was dropped since activity descriptions are already there now.

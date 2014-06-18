@@ -11,10 +11,10 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern: 
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-_**As a part of this project, Average of all the mean and standard deviation summaries were included.**_
+_**As a part of this project, data was transformed to inlude the average of all the mean and standard deviation statistics.**_
 
-### Subject
-There were 30 subjects in all who were inluded in the experiment. The subjects are numbered from 1 t0 30
+### Subjects:
+There were 30 subjects in all who were inluded in the experiment. The subjects are numbered from 1 to 30
 
 ### Activities:
 There were 6 activities that each of the subjects were measured for. The values are 
@@ -26,7 +26,13 @@ There were 6 activities that each of the subjects were measured for. The values 
 * STANDING
 * LAYING
 
-### Transformations
+### Data Structure
+
+This image describes the data structure
+
+![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png "Data Structure")
+
+## Transformations
 Following transformations were done to the data.
 * column wise stack y_xxxx.txt, x_xxxx.txt and subject_xxx.txt using cbind for both training and test dataset ( xxxx = test / train). This gives consolidated data for both training and test dataset.
 * row wise stack test and training data using rbind. This gives complete dataset.
