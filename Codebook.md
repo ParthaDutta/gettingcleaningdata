@@ -25,12 +25,14 @@ There were 6 activities that each of the subjects were measured for.
 ## Variable description
 
 Columns were named to as descriptive as possible. In general, the variable names denoting the features follow the following convention "
-|Summary        | test   - Body or Gravity | Measurement device  | Movement         |   Summary | Direction|
-|Time/Frequency | Time/Frequency | ( Accelerometer / Gyroscope ) | Jerk / Magnitude  | Mean / Standard Deviation | X / Y Z |
+|Summary        | test   - Body or Gravity | Measurement device  | Movement          |   Summary                 | Direction|
+|---------------|--------------------------|---------------------|-------------------|---------------------------|----------|
+|Time/Frequency | Time/Frequency | ( Accelerometer / Gyroscope ) | Jerk / Magnitude  | Mean / Standard Deviation | X / Y /Z |
 
 There is the complete list of all the variables.
 
-| Variables  | Description and Values | Unit |
+| Variables  | Description and Values |
+|------------|------------------------|
 |activity                                                       | Laying etc  Walking, Laying, Walking up| 
 |subject                                                        | 1 to 30 |
 |AverageTimeBodyAcceleration.Mean.X                             | -1 to 1 |
