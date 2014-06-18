@@ -1,5 +1,3 @@
-setwd("/home/crab/scratchpad/repos/gettingcleaningdata")
-
 options(stringsAsFactors = FALSE)
 library(plyr)
 
@@ -31,8 +29,8 @@ subjects.test <- read.table(paste(testdir, "subject_test.txt", sep = "" ))
 
 # combine the data to get all the variable in a single dataframe.
 # combine the activity, subject and measured features data
-# this is in the format activity_id, subject, features
-testdata.raw <- cbind(ydata.test, subjects.test, xdata.test )
+# this is in the format subject, activity_id, features
+testdata.raw <- cbind(subjects.test, ydata.test, xdata.test )
 
 # Load the training dataset
 # Read the data
@@ -44,8 +42,8 @@ subjects.train <- read.table(paste(traindir, "subject_train.txt", sep = "" ))
 
 # combine the data to get all the variable in a single dataframe.
 # combine the activity, subject and measured features data
-# this is in the format activity_id, subject, features
-traindata.raw <- cbind(ydata.train, subjects.train, xdata.train )
+# this is in the format subject, activity_id, features
+traindata.raw <- cbind(subjects.train, ydata.train, xdata.train )
 
 # Merge both test and training raw datasets to form a consolidated raw dataset
 data.raw <- rbind(testdata.raw, traindata.raw)
@@ -54,7 +52,7 @@ data.raw <- rbind(testdata.raw, traindata.raw)
 # Part 2 - get mean and standard deviation columns
 # add the columns so that data is easy to play with
 # keep only those columns that end with mean() or std()
-names(data.raw) <- c("activity_id", "subject", features[, 2]) 
+names(data.raw) <- c("subject", "activity_id", features[, 2]) 
 data.filter <- data.raw[, c(1, 2, grep("mean\\(\\)|std\\(\\)", names(data.raw)))]
 
 # Part 3 - descriptive activity names to describe the activities in dataset
@@ -94,6 +92,3 @@ names(data.group)[c(-1, -2)] <- sapply(names(data.group)[c(-1, -2)], function(x)
 
 # Write the tidy dataset to the file.
 write.table(data.group, "average-measurement-data.txt", sep = "," , row.names = FALSE, quote = FALSE)
-
-
-

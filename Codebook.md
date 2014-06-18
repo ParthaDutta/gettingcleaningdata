@@ -8,33 +8,48 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-These signals were used to estimate variables of the feature vector for each pattern:  
+These signals were used to estimate variables of the feature vector for each pattern: 
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-~~ As a part of this project, Average of all the mean and standard deviation summaries were included. ~~
-
+_**As a part of this project, Average of all the mean and standard deviation summaries were included.**_
 
 ### Subject
 There were 30 subjects in all who were inluded in the experiment. The subjects are numbered from 1 t0 30
 
 ### Activities:
-There were 6 activities that each of the subjects were measured for.
+There were 6 activities that each of the subjects were measured for. The values are 
 
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
 
+### Transformations
+Following transformations were done to the data.
+* column wise stack y_xxxx.txt, x_xxxx.txt and subject_xxx.txt using cbind for both training and test dataset ( xxxx = test / train). This gives consolidated data for both training and test dataset.
+* row wise stack test and training data using rbind. This gives complete dataset.
+* Extract out mean and strandard deviation features ( with mean() and std() ).
+* merge data in activity_labels.txt to the previously created dataset go get desciptive activities
+* Do a groupwise average of the features by activity by subject using ddply.
+
+Complete details of transformations along with the code is given in run_analysis.R
 
 ## Variable description
 
-Columns were named to as descriptive as possible. In general, the variable names denoting the features follow the following convention "
+Columns were named to as descriptive as possible. In general, the variable names denoting the features follow the following convention and as an example AverageTimeBodyAccelerationJerk.Mean.X expands to :
 
-|Summary        | test   - Body or Gravity | Measurement device  | Movement          |   Summary                 | Direction|
-|---------------|--------------------------|---------------------|-------------------|---------------------------|----------|
-|Time/Frequency | Time/Frequency | ( Accelerometer / Gyroscope ) | Jerk / Magnitude  | Mean / Standard Deviation | X / Y /Z |
+|Summary | Domain        | Signal Types | Sensor                  | velocity type       |   Statistics            | Axis     |
+|--------|---------------|--------------|-------------------------|---------------------|-------------------------|----------|
+|Average |Time/Frequency | Body/Gravity | Acceleration/Gyroscopic | Jerk / Magnitude    | Mean/Standard Deviation | X/Y/Z    |
+|Average | Time          | Body         | Acceleration            | Jerk                | Mean                    | X        |
 
-There is the complete list of all the variables.
+There is the complete list of all the variables. Measurements are normalized by dividing them by their range, they are all between -1 and 1 and do not have units ( units got cancelled by dividing)
 
 | Variables  | Description and Values |
 |------------|------------------------|
-|activity                                                       | Laying etc  Walking, Laying, Walking up| 
+|activity                                                       | Described in activity section| 
 |subject                                                        | 1 to 30 |
 |AverageTimeBodyAcceleration.Mean.X                             | -1 to 1 |
 |AverageTimeBodyAcceleration.Mean.Y                             | -1 to 1 | 
