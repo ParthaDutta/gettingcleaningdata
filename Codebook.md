@@ -25,6 +25,7 @@ There were 6 activities that each of the subjects were measured for.
 ## Variable description
 
 Columns were named to as descriptive as possible. In general, the variable names denoting the features follow the following convention "
+
 |Summary        | test   - Body or Gravity | Measurement device  | Movement          |   Summary                 | Direction|
 |---------------|--------------------------|---------------------|-------------------|---------------------------|----------|
 |Time/Frequency | Time/Frequency | ( Accelerometer / Gyroscope ) | Jerk / Magnitude  | Mean / Standard Deviation | X / Y /Z |
