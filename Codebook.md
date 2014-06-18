@@ -30,8 +30,7 @@ There were 6 activities that each of the subjects were measured for. The values 
 
 This image describes the data structure
 
-![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png "Data Structure")
-
+![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png?raw=true)
 ## Transformations
 Following transformations were done to the data.
 * column wise stack y_xxxx.txt, x_xxxx.txt and subject_xxx.txt using cbind for both training and test dataset ( xxxx = test / train). This gives consolidated data for both training and test dataset.

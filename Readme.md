@@ -53,7 +53,7 @@ The entire dataset was split into test dataset and training dataset. Hence their
 
 The structure of the data in training and test datasets is as described in the image:
 
-![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png "Data Structure")
+![Data Structure](https://github.com/iarrup/gettingcleaningdata/blob/master/images/data-structure.png?raw=true)
 
 
 The first column is subject, then activity that the subjects performed and then followed by all the measurements for each combination.
