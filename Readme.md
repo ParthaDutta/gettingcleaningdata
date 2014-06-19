@@ -10,7 +10,7 @@ The data provided for the project is about wearable computing. The data linked t
 
 ### Methodology for the Data Analysis.
 
-The Data analysis was done while adhering to the principles of reproducible research. The entire analysis is done using R script and is automated, starting from downloading data to extracting the archive file to executing all the analysis steps and finally creating a tidy dataset file.
+The Data analysis was done while adhering to the principles of reproducible research. The entire analysis is done using R script and is automated, starting from downloading data to extracting the archive file to executing all the analysis steps and finally creating a tidy dataset file. All the code is in _**run_analysis.R**_ script file.
 
 Having said that, not everything in R is similar across different operating systems. Things like path and filename conventions, supported downloading schemes different with different operating systems. Steps have been taken to overcome those issues like using relative path schemes etc. However, due to unavailability of environments, these steps have been tested only on Ubuntu 13.10 linux system. In order to truly reproduce this research, some minor modifications might be required to the code. Another caveat is that the file download, due to the size of the file sometimes times out. This step might need to be repeated as well. 
 

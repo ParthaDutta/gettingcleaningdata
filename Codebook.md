@@ -39,7 +39,7 @@ Following transformations were done to the data.
 * merge data in activity_labels.txt to the previously created dataset go get desciptive activities
 * Do a groupwise average of the features by activity by subject using ddply.
 
-Complete details of transformations along with the code is given in run_analysis.R
+Complete details of transformations along with the code is given in _**run_analysis.R**_
 
 ## Variable description
 
