@@ -14,7 +14,7 @@ These signals were used to estimate variables of the feature vector for each pat
 _**As a part of this project, data was transformed to inlude the average of all the mean and standard deviation statistics.**_
 
 ### Subjects:
-There were 30 subjects in all who were inluded in the experiment. The subjects are numbered from 1 to 30
+There were 30 subjects in all who were included in the experiment. The subjects are numbered from 1 to 30
 
 ### Activities:
 There were 6 activities that each of the subjects were measured for. The values are 
@@ -35,9 +35,9 @@ This image describes the data structure
 Following transformations were done to the data.
 * column wise stack y_xxxx.txt, x_xxxx.txt and subject_xxx.txt using cbind for both training and test dataset ( xxxx = test / train). This gives consolidated data for both training and test dataset.
 * row wise stack test and training data using rbind. This gives complete dataset.
-* Extract out mean and strandard deviation features ( with mean() and std() ).
-* merge data in activity_labels.txt to the previously created dataset go get desciptive activities
-* Do a groupwise average of the features by activity by subject using ddply.
+* Extract out mean and standard deviation features ( with mean() and std() ).
+* merge data in activity_labels.txt to the previously created dataset go get descriptive activities
+* Do a group-wise average of the features by activity by subject using ddply.
 
 Complete details of transformations along with the code is given in _**run_analysis.R**_
 
