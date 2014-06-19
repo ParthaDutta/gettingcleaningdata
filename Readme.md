@@ -61,6 +61,22 @@ In order to get a consolidate set of data, first subject_xxxx.txt, y_xxxx.txt an
 
 Then both the training and test sets are stacked rowwise using rbind.
 
+Following were the dimensions of each of the datasets
+
+|Dataset              | rows | columns | Details                            |
+|---------------------|------|---------|------------------------------------|
+| activity_labels.txt |  6   | 2       | Activities and desriptions         |
+| features.txt        | 561  | 2       | Features names                     |
+| X_test.txt          | 2947 | 561     | Test Measurement Data              |
+| y_test.txt          | 2947 | 1       | Test Activity Data                 |
+| subject_test.txt    | 2947 | 1       | Test Subject data                  |
+| testdata.raw        | 2947 | 563     | Consolidated test data             |
+| X_train.txt         | 7352 | 561     |Test Measurement Data               |
+| y_train.txt         | 7352 | 1       |Test Activity Data                  |
+| subject_train.txt   | 7352 | 1       |Test Subject data                   |
+| traindata.raw       | 7352 | 563     |Consolidated test data              |
+| data.raw            | 10299| 563     | Consolidated test and training data|
+
 
 #### Step 2 - Get mean and standard deviation columns
 Some of the features consist of mean and standard deviation calculations. These features have mean() and std() in them. The columns having these descriptions have been retained.
@@ -71,15 +87,23 @@ Vectors with GravityMean, tBodyAccMean etc are dropped as these are created by d
 
 The data in features files has been used to create the columnnames for for the data variables. First column is subject and second is activity_id. grep function has been used to filter all the mean and std columns
 
+|Dataset              | rows | columns | Details                               |
+|---------------------|------|---------|---------------------------------------|
+| data.filter         | 10299| 68      | Columns filtered for mean() and std() |
+
 
 #### Step 3 - Descriptive labels for activities
 Currently the dataset consists only of activity code. In order to clearly descibe the activities, this table was merged with activity table to pull in the activity descriptions.
 
 activity_id column was dropped since activity descriptions are already there now.
 
+|Dataset              | rows | columns | Details                               |
+|---------------------|------|---------|---------------------------------------|
+| data.final          | 10299| 68      | Activity description included         |
+
+
 #### Step 4 - give proper labels to the columns
 Since the columns are not descriptive and some of them not valid R column names, column names were altered to make them more desciptive. make.names() function was used to check the validity of the names and gsub was used to automate the alterations. Following changes were made -
-
 
 * t - Time ( Time based measurements )
 * f - Frequency ( Frequency based measurements)
@@ -100,5 +124,11 @@ ddply function was used as it is a tidy data function. It takes in a data frame 
 
 This data produced is a tidy dataset. Along with activity and subject, each of the feature measurements is in one column. Each of the observation ( for each subject by activity ) is in a single row. The data also deals with the single subject. This then follows all the tidy dataset principles.
 
-After this, a data file consisting of tidy dataset was created. This file is a comma separated file ( csv format ) with a txt extensions.
+|Dataset              | rows | columns | Details                                  |
+|---------------------|------|---------|------------------------------------------|
+| data.group          | 180  | 68      | Groupwise average by activity by subject |
 
+
+After this, a data file 'average-measurement-data.txt' consisting of tidy dataset was created. This file is a comma separated file ( csv format ) with a txt extensions.
+
+The **Codebook** for the dataset can be found [here](https://github.com/iarrup/gettingcleaningdata/blob/master/Codebook.md)
