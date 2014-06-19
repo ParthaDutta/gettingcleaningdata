@@ -55,6 +55,7 @@ data.raw <- rbind(testdata.raw, traindata.raw)
 names(data.raw) <- c("subject", "activity_id", features[, 2]) 
 data.filter <- data.raw[, c(1, 2, grep("mean\\(\\)|std\\(\\)", names(data.raw)))]
 
+
 # Part 3 - descriptive activity names to describe the activities in dataset
 # merge the data with Activity data to get in the activity labels.
 # dropping the activity column ( since activity name is there in the data)
